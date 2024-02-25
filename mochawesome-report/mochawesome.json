@@ -1,0 +1,233 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-02-25T11:44:16.795Z",
+    "end": "2024-02-25T11:44:18.074Z",
+    "duration": 1279,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e46cfbaa-36c8-422b-8c59-248d23d154fb",
+      "title": "",
+      "fullFile": "C:\\MAGANG\\sanbercode\\apiautomation\\apiautomation\\module\\test\\suites\\kasirAja.suite.js",
+      "file": "\\module\\test\\suites\\kasirAja.suite.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "efa920c2-e709-4fa4-adc8-3aa5c46e5926",
+          "title": "CRUD Product Endpoints with Authentication",
+          "fullFile": "C:\\MAGANG\\sanbercode\\apiautomation\\apiautomation\\module\\test\\suites\\kasirAja.suite.js",
+          "file": "\\module\\test\\suites\\kasirAja.suite.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"CRUD Product Endpoints with Authentication\"",
+              "fullTitle": "CRUD Product Endpoints with Authentication \"before all\" hook in \"CRUD Product Endpoints with Authentication\"",
+              "timedOut": false,
+              "duration": 608,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "authToken = await createToken();",
+              "err": {},
+              "uuid": "227938d3-42b5-4740-b6f9-73e454f17f85",
+              "parentUUID": "efa920c2-e709-4fa4-adc8-3aa5c46e5926",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success Create Product",
+              "fullTitle": "CRUD Product Endpoints with Authentication Success Create Product",
+              "timedOut": false,
+              "duration": 98,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await createProduct(authToken);\n        expect(response.status).to.equal(201); \n        // productId = response.body.data.productId;",
+              "err": {},
+              "uuid": "0c5d4ba0-7447-4b73-bfe3-6ecaf1fb542e",
+              "parentUUID": "efa920c2-e709-4fa4-adc8-3aa5c46e5926",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should return message 'Product berhasil ditambahkan' when Success Create Product ",
+              "fullTitle": "CRUD Product Endpoints with Authentication Should return message 'Product berhasil ditambahkan' when Success Create Product ",
+              "timedOut": false,
+              "duration": 111,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await createProduct(authToken);\n        expect(response.body).to.have.property('message', 'Product berhasil ditambahkan');",
+              "err": {},
+              "uuid": "82fd5fa4-0bf3-4640-8afa-87efa09cec86",
+              "parentUUID": "efa920c2-e709-4fa4-adc8-3aa5c46e5926",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Success Get List Product",
+              "fullTitle": "CRUD Product Endpoints with Authentication Success Get List Product",
+              "timedOut": false,
+              "duration": 92,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await getProducts.all(authToken);\n         //Assertion 1 : Check if the response status is equal to 200\n        expect(response.status).to.equal(200)\n        const responseBody = JSON.parse(response.text);\n        if(responseBody.data.products.length > 0){\n            productId = responseBody.data.products[0].id\n             //Assertion 2 : Check if the \"productId\" property matches the expected pattern (e.g., UUID)\n            expect(productId).to.match(/[a-f0-9-]+/);\n        }else{\n            console.log(\"Data Produk Kosong\")\n        }",
+              "err": {},
+              "uuid": "9eeda1ad-a5bd-4c73-a5d9-b722fc66f866",
+              "parentUUID": "efa920c2-e709-4fa4-adc8-3aa5c46e5926",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "The 'data' property should contain an object with a 'products' array.",
+              "fullTitle": "CRUD Product Endpoints with Authentication The 'data' property should contain an object with a 'products' array.",
+              "timedOut": false,
+              "duration": 89,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await getProducts.all(authToken);\n        //Assertion 1: Check if the response should have data property with products array\n        expect(response.body.data).to.have.property('products').that.is.an('array');",
+              "err": {},
+              "uuid": "85770c3a-e659-4e38-b2d1-9e9476860cb6",
+              "parentUUID": "efa920c2-e709-4fa4-adc8-3aa5c46e5926",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Success Get Detail Product",
+              "fullTitle": "CRUD Product Endpoints with Authentication Success Get Detail Product",
+              "timedOut": false,
+              "duration": 84,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await getProducts.params(productId, authToken);\n//Assertion 1: Check if the response status is equal to 400\nexpect(response.status).to.equal(200)\nconst responseBody = JSON.parse(response.text);\nconsole.log(responseBody)\n//Assertion 2 : Check if the \"productId\" property matches the expected pattern (e.g., UUID)\nexpect(responseBody.data.product).to.have.property('price').that.is.a('number');",
+              "err": {},
+              "uuid": "c5bda1b0-7f72-4162-9abd-3898b52c783d",
+              "parentUUID": "efa920c2-e709-4fa4-adc8-3aa5c46e5926",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Failed Update Product with message 'price' must be a number",
+              "fullTitle": "CRUD Product Endpoints with Authentication Failed Update Product with message 'price' must be a number",
+              "timedOut": false,
+              "duration": 94,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await updateProduct(productId, authToken);\n// Assertion 1: Check if the response status is equal to 400\nexpect(response.status).to.equal(400)   \n// Assertion 2: Check if the response body includes the correct error message\nexpect(response.body).to.include({ message: '\"price\" must be a number' });",
+              "err": {},
+              "uuid": "d2a79b48-a47f-4a39-9cdf-276275630fd6",
+              "parentUUID": "efa920c2-e709-4fa4-adc8-3aa5c46e5926",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Success Delete Product",
+              "fullTitle": "CRUD Product Endpoints with Authentication Success Delete Product",
+              "timedOut": false,
+              "duration": 79,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await deleteProduct(productId, authToken)\n       \n        // Assertion 1: Check if the response status is equal to 200\n        expect(response.status).to.equal(200)\n        // Assertion 2: Check if the \"message\" property contains a specific substring\n        expect(response.body.message).to.include('Product berhasil dihapus');",
+              "err": {},
+              "uuid": "523a921a-906d-4ba3-88e1-9861c8731556",
+              "parentUUID": "efa920c2-e709-4fa4-adc8-3aa5c46e5926",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c5d4ba0-7447-4b73-bfe3-6ecaf1fb542e",
+            "82fd5fa4-0bf3-4640-8afa-87efa09cec86",
+            "9eeda1ad-a5bd-4c73-a5d9-b722fc66f866",
+            "85770c3a-e659-4e38-b2d1-9e9476860cb6",
+            "c5bda1b0-7f72-4162-9abd-3898b52c783d",
+            "d2a79b48-a47f-4a39-9cdf-276275630fd6",
+            "523a921a-906d-4ba3-88e1-9861c8731556"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 647,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.3.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "apiautomation",
+  "version": "1.0.0",
+  "description": "api automation script with supertest",
+  "main": "index.js",
+
+  "_comment" : "Ada tambahan type : module",
+  "type": "module",
+
+  "scripts": {
+    "_comment1" : "isi sebelumnya (echo \"Error: no test specified\" && exit 1) ",
+    "test": "npx mocha --reporter mochawesome",
+    "_comment2" : "untuk manggilnya gunakan `npm run test module/test/spec/xxxxx.js` (path) nya",
+    "suite:booking" : "npx mocha --reporter mochawesome module/test/suites/booking.suite.js",
+    "_comment3" : "untuk manggilnya gunakan `npm run suites:booking"   
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiofanial/apiautomation.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "tiofani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiofanial/apiautomation/issues"
+  },
+  "homepage": "https://github.com/tiofanial/apiautomation#readme",
+  "dependencies": {
+    "chai": "^5.1.0",
+    "supertest": "^6.3.4"
+  },
+  "devDependencies": {
+    "mocha": "^10.3.0",
+    "mochawesome": "^7.1.3"
+  }
+  
+}
+
+
